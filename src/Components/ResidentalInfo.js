@@ -37,18 +37,21 @@ const ResidentalInfo = ({ register, errors, flexDirection }) => {
           Pin
         </label>
         <input
-          className={`appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${
-            errors?.pin ? "border-red-500" : ""
-          }`}
+          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
           id="grid-pin"
           type="text"
           placeholder="Pin"
-          name="pin" // Add name attribute for form data binding
-          {...register("pin", { required: true })} // Register input for validation
+          {...register("pin", {
+            required: "Pin is required",
+            pattern: {
+              value: /^[0-9]{6}$/,
+              message: "Pin should be exactly 6 digits",
+            },
+          })}
         />
         {errors?.pin && (
           <p className="text-red-500 text-xs italic">
-            Please fill out this field.
+            {errors.pin.message || "Please fill out this field."}
           </p>
         )}
       </div>

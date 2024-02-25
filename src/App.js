@@ -62,6 +62,7 @@ function App() {
     <>
       <Navbar />
       <div className="container mx-auto my-8">
+        <h2 className="text-2xl font-bold mb-4">Fill This Crazy Form😜</h2>
         <form
           className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4"
           onSubmit={handleSubmit(onSubmit)} 

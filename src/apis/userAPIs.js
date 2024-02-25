@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:8000/api/users";
+const url = "https://dataneuron-backend-eju6.onrender.com/api/users";
 
 export const getUsers = async () => {
   return await axios.get(url);
